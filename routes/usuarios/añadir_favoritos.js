@@ -12,7 +12,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /usuarios/favoritos:
+ * /usuarios/anadir_favoritos:
  *   post:
  *     summary: Añade una película a las favoritas de un usuario.
  *     tags: [Usuarios]
