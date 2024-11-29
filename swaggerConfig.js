@@ -5,7 +5,7 @@ const swaggerOptions = {
         openapi: '3.0.0',
         info: {
             title: 'API de Películas - ISC701V',
-            version: '1.0.0',
+            version: '1.0.17',
             description: 'Documentación del API del grupo ISC701V, desarrollada por el equipo de BackEnd. :D'
         },
         servers: [
