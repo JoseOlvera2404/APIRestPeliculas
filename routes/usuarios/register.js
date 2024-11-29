@@ -8,7 +8,7 @@ const router = express.Router();
  * @swagger
  * tags:
  *   name: Usuarios
- *   description: Rutas relacionadas con los usuarios
+ *   description: Rutas relacionadas con los Usuarios
  */
 
 /**

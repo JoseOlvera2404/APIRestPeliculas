@@ -9,7 +9,7 @@ const router = express.Router();
  * @swagger
  * tags:
  *   name: Películas
- *   description: Rutas relacionadas con películas
+ *   description: Rutas relacionadas con Películas
  */
 
 /**
