@@ -99,7 +99,9 @@ router.get('/', async (req, res) => {
         */
         const result = await pool.request().
             input('query', `%${query}%`).
-            query(`SELECT pelicula.nombre, 
+            query(`SELECT 
+                        pelicula.id_pelicula,
+                        pelicula.nombre, 
                         pelicula.imagen,
                         pelicula.clasificacion,
                         genero.nombre AS genero,

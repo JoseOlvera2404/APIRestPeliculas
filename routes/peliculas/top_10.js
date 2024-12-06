@@ -82,7 +82,8 @@ router.get('/', async (req, res) => {
         const pool = await poolPromise;
 
         const result = await pool.request().
-            query(`SELECT TOP 10 pelicula.nombre,
+            query(`SELECT TOP 10 pelicula.id_pelicula,
+                        pelicula.nombre,
                         pelicula.sinopsis,
                         pelicula.imagen,
                         pelicula.trailer,

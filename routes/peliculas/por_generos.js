@@ -118,8 +118,8 @@ router.get('/:id_genero', async (req, res) => {
         const genreCheck = await pool.request().
             input('id_genero', id_genero).
             query(`SELECT id_genero 
-            FROM genero 
-            WHERE id_genero = @id_genero`);
+                    FROM genero 
+                    WHERE id_genero = @id_genero`);
 
         //Verificar que la longitud de la consulta sea distinta a 0
         if (genreCheck.recordset.length == 0) {
@@ -135,15 +135,17 @@ router.get('/:id_genero', async (req, res) => {
             input('offset', offset).
             input('limit', limitInt).
             input('id_genero', id_genero).
-            query(`SELECT nombre, 
-                imagen,
-                clasificacion
-            FROM pelicula 
-            WHERE id_genero = @id_genero
-            ORDER BY nombre 
-            OFFSET @offset 
-            ROWS FETCH NEXT @limit 
-            ROWS ONLY`);
+            query(`SELECT 
+                        id_pelicula,
+                        nombre, 
+                        imagen,
+                        clasificacion
+                    FROM pelicula 
+                    WHERE id_genero = @id_genero
+                    ORDER BY nombre 
+                    OFFSET @offset 
+                    ROWS FETCH NEXT @limit 
+                    ROWS ONLY`);
 
         //Verificar si no se encontraron películas
         if (result.recordset.length === 0) {

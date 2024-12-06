@@ -67,7 +67,9 @@ router.get('/', async (req, res) => {
         const pool = await poolPromise;
 
         const result = await pool.request().
-            query(`SELECT nombre 
+            query(`SELECT 
+                        id_genero,
+                        nombre 
                     FROM genero`);
 
         // Verificar si no se encontraron películas

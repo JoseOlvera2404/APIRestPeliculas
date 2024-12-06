@@ -86,6 +86,7 @@ router.get('/:id_usuario', async (req, res) => {
         const result = await pool.request().
             input('id_usuario', id_usuario).
             query(`SELECT 
+                        p.id_pelicula,
                         p.nombre,
                         p.imagen,
                         d.nombre AS director

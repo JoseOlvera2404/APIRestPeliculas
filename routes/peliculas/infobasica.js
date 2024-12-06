@@ -103,7 +103,9 @@ router.get('/', async (req, res) => {
         const result = await pool.request().
             input('offset', offset).
             input('limit', limitInt).
-            query(`SELECT nombre, 
+            query(`SELECT 
+                        id_pelicula,
+                        nombre, 
                         imagen,
                         clasificacion
                     FROM pelicula 

@@ -122,18 +122,18 @@ router.get('/:id_pelicula', async (req, res) => {
         const result = await pool.request().
             input('id_pelicula', id_pelicula).
             query(`SELECT pelicula.nombre,
-                    pelicula.sinopsis,
-                    pelicula.imagen,
-                    pelicula.trailer,
-                    genero.nombre AS genero,
-                    pelicula.duracion,
-                    pelicula.clasificacion,
-                    director.nombre AS director,
-                    pelicula.anio 
-                FROM pelicula
-                INNER JOIN genero ON pelicula.id_genero = genero.id_genero
-                INNER JOIN director ON pelicula.id_director = director.id_director
-                WHERE pelicula.id_pelicula = @id_pelicula`);
+                        pelicula.sinopsis,
+                        pelicula.imagen,
+                        pelicula.trailer,
+                        genero.nombre AS genero,
+                        pelicula.duracion,
+                        pelicula.clasificacion,
+                        director.nombre AS director,
+                        pelicula.anio 
+                    FROM pelicula
+                    INNER JOIN genero ON pelicula.id_genero = genero.id_genero
+                    INNER JOIN director ON pelicula.id_director = director.id_director
+                    WHERE pelicula.id_pelicula = @id_pelicula`);
 
         //Verificar si no se encontraron películas
         if (result.recordset.length === 0) {

@@ -85,7 +85,8 @@ router.get('/:id_director', async (req, res) => {
 
         const result = await pool.request().
             input('id_director', id_director).
-            query(`SELECT nombre,
+            query(`SELECT 
+                        nombre,
                         biografia,
                         fecha_nacimiento 
                     FROM director

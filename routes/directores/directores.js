@@ -75,7 +75,9 @@ router.get('/', async (req, res) => {
         const pool = await poolPromise;
 
         const result = await pool.request().
-            query(`SELECT nombre,
+            query(`SELECT 
+                        id_director,
+                        nombre,
                         biografia,
                         fecha_nacimiento 
                     FROM director`);
